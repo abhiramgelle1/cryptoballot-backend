@@ -16,7 +16,8 @@ A Spring Boot backend for CryptoBallot — a secure electronic voting system usi
 8. [Database Schema](#database-schema)  
 9. [Security Mechanisms](#security-mechanisms)  
 10. [Attack Simulation Features](#attack-simulation-features)  
-11. [Tally & Verification](#tally--verification)  
+11. [Tally & Verification](#tally--verification)
+12. [System Architecture & Workflow](#systemarchitecture--workflow)
 
 ---
 
@@ -139,3 +140,21 @@ Tests SQL injection attempts on vote and user inputs — demonstrates secure par
 1. Uses Paillier homomorphic multiplication to aggregate all encrypted votes.
 2. Authority decrypts total votes using their private key.
 3. Logged-in users can also view their personal vote breakdown.
+
+
+## System Architecture and Workflows
+
+- High Level Diagram how defferent layers connected in my Application
+
+![Screenshot 2025-04-22 101753](https://github.com/user-attachments/assets/0ea23dcf-0cd9-4139-84e8-581fb75ff7ee)
+
+- Key Management persistence and Activeness throughout the entire session of Application
+
+![Screenshot 2025-04-22 102146](https://github.com/user-attachments/assets/72f0a293-f7bb-4d8c-bae9-d04a8c6c2250)
+
+- Different Workflows in an overview for casting vote:
+
+1. Casting vote [Paillier Encryption] Without Blind Sgnature
+![Screenshot 2025-04-22 102029](https://github.com/user-attachments/assets/db0ba013-41cd-4aeb-a3b5-067a75120a57)
+2. Casting vote [Paillier Encryption] With Blind Sgnature
+![Screenshot 2025-04-22 102105](https://github.com/user-attachments/assets/2d69a800-67a1-4c36-8b0d-dddfe49dc611)
